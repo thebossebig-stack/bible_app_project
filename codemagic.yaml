@@ -1,7 +1,7 @@
 workflows:
   android-apk:
     name: Android APK
-    instance_type: mac_mini
+    instance_type: linux
     environment:
       node: 20.19.4
       npm: 10.8.2
