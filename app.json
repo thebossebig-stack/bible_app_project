@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "La Bible Louis Segond App",
+    "slug": "bible-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "bible-app",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#17120D"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bibleapp.reader"
+    },
+    "android": {
+      "package": "com.bibleapp.reader"
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      ["expo-router", { "origin": "https://localhost/" }],
+      "expo-font",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
