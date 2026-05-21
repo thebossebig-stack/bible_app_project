@@ -1,17 +1,21 @@
 workflows:
   android-apk:
     name: Android APK
-    instance_type: linux
+    instance_type: linux          # Spécifie une machine Linux pour la compilation Android
     environment:
-      node: 20.19.4
+      node: 20.19.4                # Version de Node.js recommandée pour votre projet
       npm: 10.8.2
     scripts:
       - name: Install dependencies
         script: npm install
-      - name: Build Android APK
+      - name: Build Android APK via Expo
         script: |
+          # Génère les dossiers Android nécessaires pour Expo
           npx expo prebuild
+          # Se déplace dans le dossier Android généré
           cd android
+          # Lance la compilation de l'APK de débogage
           ./gradlew assembleDebug
     artifacts:
+      # Définit l'emplacement où l'APK sera généré
       - android/app/build/outputs/apk/debug/**/*.apk
