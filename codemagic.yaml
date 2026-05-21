@@ -1,0 +1,17 @@
+workflows:
+  android-apk:
+    name: Android APK
+    instance_type: mac_mini
+    environment:
+      node: 20.19.4
+      npm: 10.8.2
+    scripts:
+      - name: Install dependencies
+        script: npm install
+      - name: Build Android APK
+        script: |
+          npx expo prebuild
+          cd android
+          ./gradlew assembleDebug
+    artifacts:
+      - android/app/build/outputs/apk/debug/**/*.apk
